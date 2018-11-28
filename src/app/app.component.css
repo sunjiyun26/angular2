@@ -1,0 +1,67 @@
+.btn {
+  margin-left: 18px;
+}
+
+.btn:hover {
+  background: rgba(255,255,255,.2);
+}
+
+.tooltip-layout {
+  margin-bottom: 5px;
+  cursor: pointer
+}
+.tooltip-layout:hover {
+  background: #cccccc;
+}
+
+.ant-layout {
+  text-align: center;
+}
+
+.ant-layout-header {
+  background: #11aa88;
+
+}
+
+.ant-layout-sider {
+  background: #ebebeb;
+  height: 100%;
+}
+
+.ant-layout-content {
+  background: #fff;
+  line-height: 120px;
+  color: #000000;
+  margin-left: 10px;
+  height: 100%;
+}
+
+.ant-layout-footer {
+  background: #ffffff;
+  margin-top: 10px;
+  height: 16px;
+  padding-top: 7px;
+}
+
+.gutter-box {
+  height: 780px;
+  background: #ebebeb;
+  margin: 1px;
+}
+
+.ant-menu {
+  background: #ebebeb;
+}
+
+.ant-btn-primary {
+  background: transparent;
+}
+
+
+.nz-sample {
+  height:780px;
+}
+
+.ant-btn-primary {
+  background: transparent;
+}

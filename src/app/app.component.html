@@ -1,22 +1,113 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
- <!-- 图片注释掉了-->
-  <!--<img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">-->
-</div>
-<h2>Here are some links to help you start111111111: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-  <app-first-component></app-first-component>
-</ul>
+<!-- NG-ZORRO -->
 
+<nz-layout>
+  <nz-header>
+    <div style="display:inline-block;width: 10%;">
+      <a href="#/">
+        <img src="assets/logo.svg" style="max-height:40px;">
+      </a>
+    </div>
+
+    <div style="display:inline-block;width: 10%;">
+      <button nz-button [nzType]="'primary'" (click)="handleCollapseAction()" style="margin-bottom: 10px;">
+        <i class="anticon" [class.anticon-menu-unfold]="isCollapsed" [class.anticon-menu-fold]="!isCollapsed"></i>
+      </button>
+    </div>
+
+    <div style="display:inline-block;width: 45%;">
+      <nz-input-group nzSuffixIcon="anticon anticon-search">
+        <input width="100%" type="text" nz-input placeholder="please input some information...">
+      </nz-input-group>
+    </div>
+
+    <div style="display:inline-block;width: 35%; text-align: right ;">
+      <nz-badge [nzCount]="5">
+        <button nzTrigger="click" nzTitle="prompt text" nzPlacement="bottom" nz-button nz-popover
+                [nzTitle]="titleTemplate" [nzContent]="contentTemplate" class="btn" nzType="primary" nzShape="circle">
+          <i
+            class="anticon anticon-bell"></i>
+        </button>
+        <ng-template #titleTemplate><i class="anticon anticon-info-circle"></i> Title</ng-template>
+        <ng-template #contentTemplate>
+          <nz-list [nzDataSource]="data" [nzRenderItem]="item" [nzItemLayout]="'horizontal'">
+            <ng-template #item let-item>
+              <nz-list-item class="tooltip-layout">
+                <nz-list-item-meta
+                  [nzTitle]="nzTitle"
+                  nzDescription="Alert information： you should pay attention to ....">
+                  <ng-template #nzTitle>
+                    {{item.title}}
+                  </ng-template>
+                </nz-list-item-meta>
+              </nz-list-item>
+            </ng-template>
+          </nz-list>
+        </ng-template>
+      </nz-badge>
+
+      <button nz-button style="margin-left: 10px" nzType="primary" nzShape="circle"><i
+        class="anticon anticon-setting"></i></button>
+      <button nz-button style="margin-left: 10px" nzType="primary" nzShape="circle"><i
+        class="anticon anticon-poweroff"></i></button>
+    </div>
+  </nz-header>
+  <nz-layout class="nz-sample">
+    <nz-sider>
+      <div>
+        <ul nz-menu [nzMode]="'inline'" nzTheme='light' [nzInlineCollapsed]="isCollapsed">
+          <li nz-menu-item>
+            <span title>
+             <i class="anticon anticon-dashboard"></i>
+              <span>Dashboard</span>
+            </span>
+          </li>
+          <li nz-submenu>
+            <span title>
+              <i class="anticon anticon-appstore"></i>
+              <span>财富计算</span>
+            </span>
+            <ul>
+              <li nz-menu-item><a routerLink="/crisis-center" routerLinkActive="active">个税计算</a></li>
+              <li nz-menu-item><a routerLink="/crisis-center2" routerLinkActive="active">画图</a></li>
+              <li nz-menu-item><a routerLink="/welcome" routerLinkActive="active">账户设置</a></li>
+              <li nz-submenu>
+                <span title>其他</span>
+                <ul>
+                  <li nz-menu-item>其他1</li>
+                  <li nz-menu-item>其他2</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li nz-submenu>
+            <span title>
+              <i class="anticon anticon-setting"></i>
+              <span>系统设置</span>
+            </span>
+            <ul>
+              <li nz-menu-item>个人信息</li>
+              <li nz-menu-item>安全设置</li>
+              <li nz-menu-item>退出</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nz-sider>
+    <!--<nz-layout>-->
+      <nz-content>
+
+        <div class="content-box">
+          <div nz-row nzGutter="24">
+            <!--<div nz-col class="gutter-row" nzSpan="24">-->
+              <!--<div class="gutter-box">col-8</div>-->
+            <!--</div>-->
+            <router-outlet></router-outlet>
+          </div>
+        </div>
+      </nz-content>
+
+    <!--</nz-layout>-->
+
+  </nz-layout>
+  <nz-footer> Copyright by [sunjiyun] ICP 1567-2018</nz-footer>
+</nz-layout>
