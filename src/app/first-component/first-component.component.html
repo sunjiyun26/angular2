@@ -1,18 +1,26 @@
-<p>
-  first-component works!
-  hello {{name}}
 
+<nz-table #dataSource [nzData]="listdata">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Host</th>
+    <th>Https only</th>
 
-</p>
-<div *ngIf="flag ==1">
-  我是div 1
-
-</div>
-<div *ngIf="flag ==2">
-  我是div 2
-
-</div>
-<div *ngIf="flag ==3">
-  我是div 3
-
-</div>
+    <th>Operation</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let data of dataSource.data">
+    <td>{{data.name}}</td>
+    <td>{{data.shuliang}}</td>
+    <td>{{data.shijian}}</td>
+    <td>
+      <a nz-tooltip nzTitle="Delete"><i class="anticon anticon-minus-circle-o"></i></a>
+      <nz-divider nzType="vertical">|</nz-divider>
+      <a nz-tooltip nzTitle="Update"><i class="anticon anticon-edit"></i></a>
+      <nz-divider nzType="vertical">|</nz-divider>
+      <a nz-tooltip nzTitle="Retrieve"><i class="anticon anticon-exclamation-circle-o"></i></a>
+    </td>
+  </tr>
+  </tbody>
+</nz-table>
