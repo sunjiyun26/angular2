@@ -8,6 +8,7 @@ import {
   Validators
 } from '@angular/forms';
 import {BaseDateService} from '../core/base-date.service';
+import {NgZorroAntdModule} from 'ng-zorro-antd';
 
 
 @Component({
@@ -21,6 +22,8 @@ export class SjyEchartsComponent implements OnInit {
   options: any;
   days;
   String;
+  endDate: string;
+  beginDate: string;
   rest: number = 4.4 / 100;
   rest55: number = 5.5 / 100;
 
@@ -139,8 +142,8 @@ export class SjyEchartsComponent implements OnInit {
 
   }
 
-  submitForm(): void {
-    console.log('aaaaaaaaaaaaaaaaaa');
+  onSubmit(value): void {
+    console.log(value);
     // for (const control of this.validateForm.controls) {
     //   control.markAsDirty();
     //   control.updateValueAndValidity();

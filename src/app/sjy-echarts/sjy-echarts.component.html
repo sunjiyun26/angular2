@@ -1,33 +1,26 @@
-<div style="width: 400px">
+<div style="width: 400px;position: center;padding-left: 200px">
+  <div nz-form-item nz-row>
+    <div nz-form-label nz-col [nzSm]="8" [nzXs]="24" [nzLg]="8">
+      <label nz-form-item-required>开始时间</label>
+    </div>
+    <div  nz-col [nzSm]="16" [nzXs]="24" [nzLg]="16"  >
+      <input style="padding-left: 20px;height: 20px" [ngModel]="beginDate"  placeholder='账单日'>
+    </div>
+  </div>
 
 
-<form nz-form  class="login-form" (ngSubmit)="submitForm()">
-  <nz-form-item>
-    <nz-form-control>
-      <nz-input-group >
-        <input type="text" nz-input  placeholder="Username">
-      </nz-input-group>
-    </nz-form-control>
-  </nz-form-item>
-  <nz-form-item>
-    <nz-form-control>
-      <nz-input-group >
-        <input type="password" nz-input  placeholder="Password">
-      </nz-input-group>
-    </nz-form-control>
-  </nz-form-item>
-  <nz-form-item>
-    <nz-form-control>
-      <label nz-checkbox >
-        <span>Remember me</span>
-      </label>
-      <a class="login-form-forgot" class="login-form-forgot">Forgot password</a>
-      <button nz-button class="login-form-button" [nzType]="'primary'">Log in</button>
-      Or
-      <a href="">register now!</a>
-    </nz-form-control>
-  </nz-form-item>
-</form>
+  <div nz-form-item nz-row>
+    <div nz-form-label nz-col [nzSm]="8" [nzXs]="24" [nzLg]="8">
+      <label nz-form-item-required>结束时间</label>
+    </div>
+    <div  nz-col [nzSm]="16" [nzXs]="24" [nzLg]="16"  >
+      <input style="padding-left: 20px;height: 20px" [ngModel]="endDate"  placeholder='还款日'>
+    </div>
+  </div>
+
+
+
+
 </div>
 <div echarts [options]="chartOption" class="demo-chart"></div>
 
